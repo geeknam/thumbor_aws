@@ -53,6 +53,6 @@ def load(context, url, callback):
 
     file_key = bucket_loader.get_key(url)
     if not file_key:
-        return callback(None)
+        return http_loader.load(context, url, callback)
 
     return callback(file_key.read())
